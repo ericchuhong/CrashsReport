@@ -14,6 +14,8 @@
 		94A5AA671F05F79400EC3A16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A5AA651F05F79400EC3A16 /* LaunchScreen.storyboard */; };
 		94A5AA721F05F79400EC3A16 /* CrashsReportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5AA711F05F79400EC3A16 /* CrashsReportTests.swift */; };
 		94A5AA7D1F05F79400EC3A16 /* CrashsReportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5AA7C1F05F79400EC3A16 /* CrashsReportUITests.swift */; };
+		94A5AA8C1F05F7E600EC3A16 /* UncaughtExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5AA8A1F05F7E600EC3A16 /* UncaughtExceptionHandler.swift */; };
+		94A5AA8D1F05F7E600EC3A16 /* EMLUncaughtExceptionHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A5AA8B1F05F7E600EC3A16 /* EMLUncaughtExceptionHandle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,9 @@
 		94A5AA781F05F79400EC3A16 /* CrashsReportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrashsReportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A5AA7C1F05F79400EC3A16 /* CrashsReportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashsReportUITests.swift; sourceTree = "<group>"; };
 		94A5AA7E1F05F79400EC3A16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94A5AA8A1F05F7E600EC3A16 /* UncaughtExceptionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UncaughtExceptionHandler.swift; sourceTree = "<group>"; };
+		94A5AA8B1F05F7E600EC3A16 /* EMLUncaughtExceptionHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMLUncaughtExceptionHandle.swift; sourceTree = "<group>"; };
+		94A5AA8E1F05F89A00EC3A16 /* CrashsReport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CrashsReport-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +102,15 @@
 		94A5AA5B1F05F79400EC3A16 /* CrashsReport */ = {
 			isa = PBXGroup;
 			children = (
+				94A5AA8A1F05F7E600EC3A16 /* UncaughtExceptionHandler.swift */,
+				94A5AA8B1F05F7E600EC3A16 /* EMLUncaughtExceptionHandle.swift */,
 				94A5AA5C1F05F79400EC3A16 /* AppDelegate.swift */,
 				94A5AA5E1F05F79400EC3A16 /* ViewController.swift */,
 				94A5AA601F05F79400EC3A16 /* Main.storyboard */,
 				94A5AA631F05F79400EC3A16 /* Assets.xcassets */,
 				94A5AA651F05F79400EC3A16 /* LaunchScreen.storyboard */,
 				94A5AA681F05F79400EC3A16 /* Info.plist */,
+				94A5AA8E1F05F89A00EC3A16 /* CrashsReport-Bridging-Header.h */,
 			);
 			path = CrashsReport;
 			sourceTree = "<group>";
@@ -257,6 +265,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				94A5AA5F1F05F79400EC3A16 /* ViewController.swift in Sources */,
+				94A5AA8C1F05F7E600EC3A16 /* UncaughtExceptionHandler.swift in Sources */,
+				94A5AA8D1F05F7E600EC3A16 /* EMLUncaughtExceptionHandle.swift in Sources */,
 				94A5AA5D1F05F79400EC3A16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,10 +411,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CrashsReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.tianziyao.CrashsReport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CrashsReport/CrashsReport-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -412,10 +426,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CrashsReport/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.tianziyao.CrashsReport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CrashsReport/CrashsReport-Bridging-Header.h";
 			};
 			name = Release;
 		};
